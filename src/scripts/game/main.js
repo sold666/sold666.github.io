@@ -12,8 +12,8 @@ export const KEYS = {
     }
 };
 
-export let player = new Player();
 export const platforms = createPlatformsFromLinks();
+export let player = new Player(platforms[0]);
 export let currentPlatform = null;
 let lastKey;
 let gameOver = false;
@@ -24,7 +24,7 @@ let isSpeaking = false;
 let speech = '';
 
 function init() {
-    player = new Player();
+    player = new Player(platforms[0]);
 }
 
 function displayGameOver() {

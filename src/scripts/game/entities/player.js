@@ -1,11 +1,12 @@
 import {CANVAS, CTX, GRAVITY} from '../utils/canvas.js';
 
 export class Player {
-    constructor() {
+    constructor(platform) {
+        this.platform = platform;
         this.falling = false;
         this.speed = 5;
         this.position = {
-            x: 200,
+            x: this.platform.position.x,
             y: 0
         };
         this.velocity = {
@@ -52,7 +53,7 @@ export class Player {
 
     update() {
         this.frames++;
-        if (this.falling && this.position.y === 0 && this.position.x === 200) {
+        if (this.falling && this.position.y === 0 || this.position.x === this.platform.position.x) {
             this.frames = 0;
         }
         if (this.falling) {
