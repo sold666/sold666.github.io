@@ -1,0 +1,114 @@
+@import "general.css";
+
+#progress-circle {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#progress-circle::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top-color: var(--text-color);
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    color: var(--text-color);
+}
+
+#avatar {
+    margin-bottom: 20px;
+}
+
+#username {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+#avatar img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+#projects-section {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+    margin-top: 20px;
+}
+
+#projects-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#projects-list a::before {
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--text-color);
+}
+
+#projects-list a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    margin-bottom: 5px;
+    position: relative;
+    padding-left: 16px;
+}
+
+#projects-chart {
+    max-width: 300px;
+    max-height: 300px;
+    margin-left: 20px;
+}
+
+#language-chart {
+    max-width: 300px;
+    max-height: 300px;
+    margin-left: 60px;
+}
+
+.button-wrapper {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}

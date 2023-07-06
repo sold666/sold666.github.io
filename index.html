@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="CV website by Vlad Korzh"/>
+    <link rel="stylesheet" href="src/styles/main_page.css">
+    <link rel="stylesheet" href="src/styles/instruction.css">
+    <link rel="stylesheet" href="src/styles/game_over.css">
+    <link type="image/png" sizes="16x16" rel="icon" href="src/assets/title_icons/icons8-cv-color-16.png">
+    <link type="image/png" sizes="32x32" rel="icon" href="src/assets/title_icons/icons8-cv-color-32.png">
+    <link type="image/png" sizes="96x96" rel="icon" href="src/assets/title_icons/icons8-cv-color-96.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <title>Sold666 CV Website</title>
+</head>
+<body>
+<canvas id="main-canvas"></canvas>
+<div style="display:none;">
+    <img id="ch_stand_right" src="src/assets/character/ch_stand_right.png"/>
+    <img id="ch_stand_left" src="src/assets/character/ch_stand_left.png"/>
+    <img id="ch_run_right" src="src/assets/character/ch_run_right.png"/>
+    <img id="ch_run_left" src="src/assets/character/ch_run_left.png"/>
+    <img id="ch_fall" src="src/assets/character/ch_fall.png"/>
+</div>
+<div>
+    <section class="content">
+        <div class="theme-toggle">
+            <button id="theme-toggle-button" title="Toggles light & dark" aria-label="auto">
+                <img class="theme-icon" src='src/assets/main_icons/sun.svg' alt="Sun"/>
+            </button>
+        </div>
+        <div class="links">
+            <a href="src/about.html"><h1>About Me</h1></a>
+            <a href="src/projects.html"><h1>Projects</h1></a>
+            <a href="src/files/resume.pdf"><h1>Resume</h1></a>
+            <a href="src/contact.html"><h1>Contact</h1></a>
+        </div>
+        <div id="instructions-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Character management</h2>
+                <p>Use the following keys to control the character:</p>
+                <ul>
+                    <li>Right: "D" key</li>
+                    <li>Left: "A" key</li>
+                    <li>Jump: "Space" key</li>
+                    <li>Open link: "Enter" key</li>
+                    <li>Asking: "J" key</li>
+                </ul>
+            </div>
+        </div>
+        <div id="game-over-modal" class="modal">
+            <div class="modal-content">
+                <h2>Game Over</h2>
+                <p>Press Restart (R) to play again</p>
+            </div>
+        </div>
+    </section>
+</div>
+<script src="src/scripts/theme_toggle.js" type="module"></script>
+<script src="src/scripts/instruction.js"></script>
+<script type="module">
+    import './src/scripts/game/utils/canvas.js';
+    import './src/scripts/game/entities/platform.js';
+    import './src/scripts/game/entities/player.js';
+    import './src/scripts/game/main.js';
+</script>
+</body>
+</html>

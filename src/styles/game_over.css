@@ -1,0 +1,32 @@
+#game-over-modal {
+    display: none;
+}
+
+#game-over-modal .modal-content {
+    text-align: center;
+}
+
+#game-over-modal h2 {
+    font-size: 24px;
+}
+
+#game-over-modal p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+#game-over-modal .restart-animation {
+    animation: restartAnimation 1s infinite;
+}
+
+@keyframes restartAnimation {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
