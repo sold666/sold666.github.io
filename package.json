@@ -2,7 +2,7 @@
   "name": "sold666.github.io",
   "version": "1.0.0",
   "description": "CV website by Vlad Korzh",
-  "source": "src/index.html",
+  "source": "index.html",
   "scripts": {
     "start": "parcel",
     "build": "parcel build"
