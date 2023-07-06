@@ -1,0 +1,44 @@
+:root {
+    --bg-color: #F4F5F7;
+    --text-color: #0F0F0F;
+    --buttons-color: #0F0F0F;
+    --buttons-hover-color: #333131;
+}
+
+.dark {
+    --bg-color: #16161C;
+    --text-color: #fff;
+    --buttons-color: #303038;
+    --buttons-hover-color: #3f3f44;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Montserrat, sans-serif;
+    overflow: hidden;
+    background-color: var(--bg-color);
+}
+
+.return-button {
+    display: inline-block;
+    padding: 20px 30px;
+    background-color: var(--buttons-color);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 24px;
+    line-height: 1;
+}
+
+.return-button:hover {
+    background-color: var(--buttons-hover-color);
+    transform: scale(1.2);
+}
+
+.return-button:focus,
+.return-button:active {
+    outline: none;
+}
