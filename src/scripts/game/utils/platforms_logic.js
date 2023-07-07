@@ -11,9 +11,16 @@ function getLinkCoordinates(linkElement) {
 export function createPlatformsFromLinks() {
     let platforms = [];
     const linkElements = document.querySelectorAll('.links a');
+    const linkCoordinates = [];
+
     linkElements.forEach((linkElement) => {
         const {x, y, width} = getLinkCoordinates(linkElement);
-        const platform = new Platform(x + 70, y + 90, width / 1.5, 20, linkElement.href);
+        linkCoordinates.push({x, y, width});
+    });
+
+    linkCoordinates.forEach((coordinates) => {
+        const platform = new Platform(coordinates.x + 70, coordinates.y + 90, coordinates.width / 1.5,
+            20, linkElements.href);
         platforms.push(platform);
     });
     return platforms;
