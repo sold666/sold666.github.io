@@ -15,12 +15,12 @@ export function createPlatformsFromLinks() {
 
     linkElements.forEach((linkElement) => {
         const {x, y, width} = getLinkCoordinates(linkElement);
-        linkCoordinates.push({x, y, width});
+        linkCoordinates.push({x, y, width, href: linkElement.href});
     });
 
     linkCoordinates.forEach((coordinates) => {
         const platform = new Platform(coordinates.x + 70, coordinates.y + 90, coordinates.width / 1.5,
-            20, linkElements.href);
+            20, coordinates.href);
         platforms.push(platform);
     });
     return platforms;
