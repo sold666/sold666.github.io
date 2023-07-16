@@ -74,17 +74,21 @@ function displayUserData(userData) {
 
 function displayProjects(projects) {
     const projectsList = document.getElementById("projects-list");
+    const filterDate = new Date("2022-01-01");
 
     for (const element of projects) {
         const project = element;
         const projectName = project.name.toUpperCase();
         const projectURL = project.html_url;
+        const projectDate = new Date(project.created_at);
 
-        const projectLink = document.createElement("a");
-        projectLink.href = projectURL;
-        projectLink.textContent = projectName;
+        if (projectDate > filterDate) {
+            const projectLink = document.createElement("a");
+            projectLink.href = projectURL;
+            projectLink.textContent = projectName;
 
-        projectsList.appendChild(projectLink);
+            projectsList.appendChild(projectLink);
+        }
     }
 }
 
