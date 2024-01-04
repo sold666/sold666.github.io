@@ -51,7 +51,7 @@ function getProjects() {
         progressCircle.style.opacity = 0;
         setTimeout(function () {
             progressCircle.style.display = "none";
-        }, 500);
+        }, 1000);
     }).catch(function () {
         console.log("Ошибка при загрузке данных");
     });
@@ -114,7 +114,7 @@ function displayStatistic(projects) {
             datasets: [
                 {
                     data: [projectCounts],
-                    backgroundColor: ["#6ACDE0"],
+                    backgroundColor: ["#a82d32"],
                 },
             ],
         },
@@ -150,7 +150,7 @@ function displayStatistic(projects) {
             datasets: [
                 {
                     data: languageDataCounts,
-                    backgroundColor: ["#D0B2FA", "#9A99FB"],
+                    backgroundColor: ["#e82f3a", "#bebed7"],
                 },
             ],
         },

@@ -164,7 +164,7 @@ function handleKeyDown(event) {
         case 74:
             console.log('say');
             isSpeaking = true;
-            speech = 'Please, give me a job!';
+            speech = 'Happy New Year!🩵';
             break;
         case 82:
             if (gameOver) {

@@ -1,4 +1,5 @@
 @import "general.css";
+@import "snowflakes.css";
 
 #progress-circle {
     border-radius: 50%;

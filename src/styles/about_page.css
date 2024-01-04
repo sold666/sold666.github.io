@@ -1,4 +1,5 @@
 @import "general.css";
+@import "snowflakes.css";
 
 .content {
     display: flex;

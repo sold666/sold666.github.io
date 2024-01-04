@@ -1,4 +1,5 @@
 @import "general.css";
+@import "snowflakes.css";
 
 .content {
     display: flex;
@@ -17,7 +18,9 @@
 
 .social-icon:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    /* Merry Christmas */
+    box-shadow: 0 0 20px rgb(168, 45, 50);
+    /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);*/
 }
 
 .button-wrapper {

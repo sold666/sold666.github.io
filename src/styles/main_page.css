@@ -1,4 +1,6 @@
 @import "general.css";
+@import "snowflakes.css";
+
 @font-face {
     font-family: "PixelFont";
     src: url("../assets/fonts/Minecraft.ttf") format("truetype");
