@@ -11,10 +11,10 @@
   "author": "Vlad Korzh",
   "license": "ISC",
   "dependencies": {
-    "@parcel/transformer-postcss": "^2.9.3",
+    "@parcel/transformer-postcss": "^2.10.3",
     "autoprefixer": "^10.4.14",
     "cssnano": "^6.0.1",
-    "parcel": "^2.9.3",
+    "parcel": "^2.10.3",
     "postcss": "^8.4.24",
     "postcss-custom-properties": "^13.2.0",
     "postcss-url": "^10.1.3",
