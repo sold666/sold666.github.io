@@ -4,39 +4,51 @@ export class Player {
     constructor(platform) {
         this.platform = platform;
         this.falling = false;
-        this.speed = 5;
+        this.speed = 1.8;
+
         this.position = {
             x: this.platform.position.x,
             y: 0
         };
+
         this.velocity = {
             x: 0,
-            y: 1
+            y: 0
         };
+
         this.width = 100;
         this.height = 90;
+
         this.frames = 0;
+        this.frameTick = 0;
+        this.animationSpeed = 3;
+
         this.sprites = {
             stand: {
                 right: document.getElementById("ch_stand_right"),
                 left: document.getElementById("ch_stand_left"),
                 cropWidth: 250,
-                width: 100
+                width: 100,
+                maxFrames: 18
             },
             run: {
                 right: document.getElementById("ch_run_right"),
                 left: document.getElementById("ch_run_left"),
                 cropWidth: 250,
-                width: 100
+                width: 100,
+                maxFrames: 18
             },
             fall: {
                 general: document.getElementById("ch_fall"),
                 cropWidth: 250,
-                width: 100
+                width: 100,
+                maxFrames: 55
             }
-        }
+        };
+
         this.currentSprite = this.sprites.stand.right;
-        this.currentCropWidth = 250;
+        this.currentCropWidth = this.sprites.stand.cropWidth;
+        this.currentMaxFrames = this.sprites.stand.maxFrames;
     }
 
     draw() {
@@ -48,30 +60,41 @@ export class Player {
             250,
             this.position.x,
             this.position.y,
-            this.width, this.height);
+            this.width,
+            this.height
+        );
     }
 
     update() {
-        this.frames++;
-        if (this.falling && this.position.y === 0 || this.position.x === this.platform.position.x) {
-            this.frames = 0;
-        }
-        if (this.falling) {
-            if (this.currentSprite === this.sprites.fall) {
-                if (this.frames > 20) {
-                    this.frames = 0;
-                }
-            }
-        } else {
-            if (this.frames > 18) {
+        this.frameTick++;
+
+        if (this.frameTick >= this.animationSpeed) {
+            this.frameTick = 0;
+            this.frames++;
+
+            if (this.frames > this.currentMaxFrames) {
                 this.frames = 0;
             }
         }
 
         this.draw();
+
         this.position.x += this.velocity.x;
         this.position.y += this.velocity.y;
-        if (this.position.y + this.height + this.velocity.y <= CANVAS.height)
+
+        if (this.position.y + this.height + this.velocity.y <= CANVAS.height) {
             this.velocity.y += GRAVITY;
+        }
+    }
+
+    setSprite(sprite, cropWidth, width, maxFrames) {
+        if (this.currentSprite !== sprite) {
+            this.currentSprite = sprite;
+            this.currentCropWidth = cropWidth;
+            this.width = width;
+            this.currentMaxFrames = maxFrames;
+            this.frames = 0;
+            this.frameTick = 0;
+        }
     }
 }

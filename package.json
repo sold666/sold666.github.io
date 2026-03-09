@@ -23,5 +23,10 @@
   "parcelCleanPaths": [
     "dist",
     ".parcel-cache"
-  ]
+  ],
+  "overrides": {
+    "postcss-url": {
+      "minimatch": "^10.2.1"
+    }
+  }
 }

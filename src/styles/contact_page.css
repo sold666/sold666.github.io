@@ -19,8 +19,8 @@
 .social-icon:hover {
     transform: scale(1.1);
     /* Merry Christmas */
-    box-shadow: 0 0 20px rgb(168, 45, 50);
-    /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);*/
+    /*box-shadow: 0 0 20px rgb(168, 45, 50);*/
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .button-wrapper {

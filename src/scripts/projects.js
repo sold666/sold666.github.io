@@ -114,7 +114,7 @@ function displayStatistic(projects) {
             datasets: [
                 {
                     data: [projectCounts],
-                    backgroundColor: ["#a82d32"],
+                    backgroundColor: ["#952fe8"],
                 },
             ],
         },
@@ -150,7 +150,7 @@ function displayStatistic(projects) {
             datasets: [
                 {
                     data: languageDataCounts,
-                    backgroundColor: ["#e82f3a", "#bebed7"],
+                    backgroundColor: ["#952fe8", "#bebed7"],
                 },
             ],
         },

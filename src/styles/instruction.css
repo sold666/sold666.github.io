@@ -7,14 +7,14 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .modal-content {
-    background-color: #a12c32;
-    /*background-color: #fefefe;*/
+    /*Merry Christmas */
+    /*background-color: #a12c32;*/
+    background-color: #fefefe;
     margin: 10% auto;
     padding: 20px;
     border: 1px solid #888;
@@ -33,8 +33,8 @@
 }
 
 .close {
-    color: #ffffff;
-    /*color: #aaa;*/
+    /*color: #ffffff;*/
+    color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
